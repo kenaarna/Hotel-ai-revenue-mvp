@@ -56,3 +56,14 @@ if __name__ == '__main__':
     import os
 port = int(os.environ.get("PORT", 5000))
 app.run(host="0.0.0.0", port=port)
+@app.route("/api/forecast")
+def api_forecast():
+    return jsonify(generate_forecast())
+
+@app.route("/api/events")
+def api_events():
+    return jsonify(get_local_events())
+
+@app.route("/api/bookings")
+def api_bookings():
+    return jsonify(generate_sample_bookings())
