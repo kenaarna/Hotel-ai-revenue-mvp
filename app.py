@@ -1,8 +1,7 @@
-
-# app.py (Flask Backend)
 from flask import Flask, jsonify
 from datetime import date, timedelta
 import random
+import os
 
 app = Flask(__name__)
 
@@ -23,8 +22,8 @@ def generate_sample_bookings():
 
 def get_local_events():
     return [
-        {"name": "Local Festival", "start_date": "2025-04-05", "end_date": "2025-04-06", "impact": 0.25},
-        {"name": "Business Conference", "start_date": "2025-04-07", "end_date": "2025-04-08", "impact": 0.15}
+        {"name": "Local Festival", "start_date": "2025-04-05", "end_date": "2025-04-06"},
+        {"name": "Business Conference", "start_date": "2025-04-07", "end_date": "2025-04-08"}
     ]
 
 def generate_forecast():
@@ -38,9 +37,9 @@ def generate_forecast():
 
 def calculate_prices():
     return {
-        "Standard": {"current": 120, "suggested": 132},
-        "Deluxe": {"current": 150, "suggested": 177},
-        "Suite": {"current": 220, "suggested": 248},
+        "Standard": {"current": 120, "suggested": 135},
+        "Deluxe": {"current": 150, "suggested": 175},
+        "Suite": {"current": 220, "suggested": 240}
     }
 
 @app.route("/dashboard")
@@ -52,10 +51,7 @@ def dashboard():
         "bookings": generate_sample_bookings()
     })
 
-if __name__ == '__main__':
-    import os
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
+# New API endpoints
 @app.route("/api/forecast")
 def api_forecast():
     return jsonify(generate_forecast())
@@ -67,3 +63,9 @@ def api_events():
 @app.route("/api/bookings")
 def api_bookings():
     return jsonify(generate_sample_bookings())
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
+    
