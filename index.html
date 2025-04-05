@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RevUp Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #0e0e0e; color: #fff; font-family: 'Segoe UI', sans-serif; }
+    .header { background-color: #1a1a1a; }
+    .highlight { color: #FFD700; }
+  </style>
+</head>
+<body>
+  <header class="header py-6 px-8 flex justify-between items-center">
+    <h1 class="text-2xl font-bold highlight">RevUp</h1>
+    <p class="text-sm text-gray-400">AI Hotel Revenue Management Dashboard</p>
+  </header>
+
+  <main class="p-8">
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Forecast Overview</h2>
+      <div class="bg-gray-800 p-6 rounded-lg shadow">
+        <p><strong>Occupancy Forecast:</strong> 82% average next 7 days</p>
+        <p><strong>High Demand Days:</strong> April 6-7 (Festival impact)</p>
+        <p><strong>Recommended Rate Increase:</strong> +18% for Deluxe rooms</p>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Pricing Recommendations</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <h3 class="text-lg font-bold highlight">Standard</h3>
+          <p>Current: $120</p>
+          <p>Suggested: <span class="highlight">$132</span></p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <h3 class="text-lg font-bold highlight">Deluxe</h3>
+          <p>Current: $150</p>
+          <p>Suggested: <span class="highlight">$177</span></p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <h3 class="text-lg font-bold highlight">Suite</h3>
+          <p>Current: $220</p>
+          <p>Suggested: <span class="highlight">$248</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Live Event Detection</h2>
+      <div class="bg-gray-800 p-6 rounded-lg">
+        <ul class="list-disc pl-6">
+          <li>Local Festival – April 6–7 – +25% demand</li>
+          <li>Business Conference – April 9 – +15% demand</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Quick Insights</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <p class="text-2xl font-bold highlight">+18%</p>
+          <p>RevPAR</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <p class="text-2xl font-bold highlight">+12%</p>
+          <p>Occupancy</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <p class="text-2xl font-bold highlight">+15%</p>
+          <p>ADR</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <p class="text-2xl font-bold highlight">-20hrs</p>
+          <p>Manual Work Saved</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
